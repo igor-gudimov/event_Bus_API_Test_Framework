@@ -4,7 +4,8 @@
   "description": "API test framework for Event Bus using webhook.site as event receiver",
   "type": "module",
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+    "test:all": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:order": "node --experimental-vm-modules node_modules/jest/bin/jest.js tests/orderCreated.test.js"
   },
   "dependencies": {
     "@faker-js/faker": "^8.3.1",

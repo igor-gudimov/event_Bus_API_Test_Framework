@@ -47,10 +47,11 @@ npm install
 # Optionally add your persenal webhook.site API key to .env (tests can work without it)
 ```
 
-## Running tests
+## Running test files
 
 ```bash
-npm test
+npm run test:all # run all test files
+npm run test:order # run OrderCreated test file 
 ```
 
 ## Summary section covering
