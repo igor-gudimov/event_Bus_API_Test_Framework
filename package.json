@@ -1,0 +1,21 @@
+{
+  "name": "event-bus-api-test-framework",
+  "version": "1.0.0",
+  "description": "API test framework for Event Bus using webhook.site as event receiver",
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^8.3.1",
+    "ajv": "^8.12.0",
+    "ajv-formats": "^2.1.1",
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "js-yaml": "^4.1.0",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
