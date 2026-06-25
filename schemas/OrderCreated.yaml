@@ -1,0 +1,68 @@
+openapi: "3.0.3"
+info:
+  title: OrderCreated Event Schema
+  version: "1.0.0"
+components:
+  schemas:
+    OrderCreated:
+      type: object
+      required:
+        - eventId
+        - eventType
+        - correlationId
+        - timestamp
+        - payload
+      properties:
+        eventId:
+          type: string
+          # evt- prefix followed by a standard UUID (lowercase hex)
+          pattern: "^evt-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        eventType:
+          type: string
+          enum:
+            - OrderCreated
+        correlationId:
+          type: string
+          format: uuid
+        timestamp:
+          type: string
+          format: date-time
+        payload:
+          type: object
+          required:
+            - orderId
+            - customerId
+            - items
+            - totalAmount
+          properties:
+            orderId:
+              type: string
+            customerId:
+              type: string
+            items:
+              type: array
+              minItems: 1
+              items:
+                type: object
+                required:
+                  - productId
+                  - name
+                  - quantity
+                  - unitPrice
+                properties:
+                  productId:
+                    type: string
+                  name:
+                    type: string
+                  quantity:
+                    type: integer
+                    minimum: 1
+                  unitPrice:
+                    type: number
+                    minimum: 0
+                additionalProperties: false
+            totalAmount:
+              type: number
+              minimum: 0
+          additionalProperties: false
+      additionalProperties: false
